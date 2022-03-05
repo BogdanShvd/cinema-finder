@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Cinema Finder</title>
+</head>
+<body>
+    <h1>Cinema Finder</h1>
+    <div id="all-input-container">
+        <div class="control-container">
+            <label for="movie-name">Title:</label>
+            <input
+                type="text"
+                name="movie-name"
+                id="movie-name"
+                placeholder="Enter title"
+                title="Enter title without any uncorrect symbols"
+            >
+        </div>
+        <div class="control-container">
+            <label for="movie-type">Type:</label>
+            <select name="movie-type" id="movie-type">
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+            </select>
+        </div>
+        <button id="search-btn">Search</button>
+    </div>
+
+    <h2 id="search-status" hidden></h2>
+
+    <div id="search-results-container"></div>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
