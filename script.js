@@ -58,7 +58,7 @@ searchBtn.addEventListener(`click`, async function(event) {
     searchingName.value = ``;
     searchStatus.innerText = `Search for ${type}\n "${title}"`
 
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${title}&type=${type}`;
+    const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${title}&type=${type}`;
     const results = await getCinemaInfo(url);
 
     if (results.Response == `False`) {
@@ -90,7 +90,7 @@ document.addEventListener(`scroll`,async function() {
     
     if (currentScrollPosition >= availScrollHeight) {
         pageNumber += 1;
-        const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${title}&type=${type}&page=${pageNumber}`;
+        const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${title}&type=${type}&page=${pageNumber}`;
         const results = await getCinemaInfo(url);
         const searchResults = results.Search;
         
@@ -102,7 +102,7 @@ resultContainer.addEventListener(`click`,async function(event) {
     const cinemaCard = event.target.closest(`.cinema-card`);
     if (cinemaCard) {
         const imdbID = cinemaCard.dataset.imdbid;
-        const url = `http://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`;
+        const url = `https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`;
         const cinemainfo = await getCinemaInfo(url);
         const {Poster, Title, Type, Year, Genre, Actors, Plot} = cinemainfo;
         
